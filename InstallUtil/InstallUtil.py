@@ -52,6 +52,6 @@ arch2="x86"
 if "x64" in args.payload:
 	arch2 = "x64"
 
-subprocess.call(["mcs","-platform:"+arch2,"-target:winexe","-r:/usr/lib/mono/2.0/System.Configuration.Install.dll",args.inp_name,"-out:"+args.outp_name])
+subprocess.call(["mcs","-platform:"+arch2,"-target:winexe","-r:/usr/lib/mono/2.0-api/System.Configuration.Install.dll",args.inp_name,"-out:"+args.outp_name])
 
 print args.outp_name+" should be available now.\nRemember to use C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727\\InstallUtil.exe /logfile= /LogToConsole=false /U "+args.outp_name
